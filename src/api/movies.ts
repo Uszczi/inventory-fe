@@ -1,7 +1,15 @@
+import axios from "axios";
+
 export interface Movie {
-  productionYear: Date;
+  production_year: Date;
   title: string;
-  watchDate: Date;
-  Director: string; // TODO this should be a list of directors
+  watch_date: Date;
+  director: string; // TODO this should be a list of directors
   id: number; // TODO this should be a string
+}
+
+export async function getMovies(): Promise<Movie[]> {
+  const response = await axios.get("http://localhost:8010/api/movies");
+  const movies = response.data;
+  return movies;
 }
