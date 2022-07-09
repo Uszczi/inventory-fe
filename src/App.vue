@@ -1,32 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <v-app>
+    <v-main> asdfasdfa </v-main>
+  </v-app>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import { getMovies } from './api/movies';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent } from "vue";
 
-@Options({
-  components: {
-    HelloWorld,
+export default defineComponent({
+  name: "App",
+
+  data() {
+    return {
+      a: [1, 3, 4, 5, 3],
+    };
   },
-  mounted() {
-    console.log('mounted');
-    getMovies()
-  },
-})
-export default class App extends Vue {}
+});
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
